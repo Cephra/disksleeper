@@ -1,0 +1,10 @@
+[Unit]
+Description=Makes the disks spin down when there's no I/O
+Wants=disksleeper.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env bash /usr/local/bin/disksleeper.sh
+
+[Install]
+WantedBy=multi-user.target

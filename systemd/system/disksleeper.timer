@@ -1,0 +1,10 @@
+[Unit]
+Description=Starts disksleeper.service periodically
+Requires=disksleeper.service
+
+[Timer]
+Unit=disksleeper.service
+OnBootSec=180
+
+[Install]
+WantedBy=timers.target
