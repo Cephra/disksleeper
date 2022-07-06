@@ -11,7 +11,8 @@ for disk in ${DISKS_TO_SLEEP[@]}; do
     if [[ -z "$DISK_IO" ]]; then
         echo "Spinning down $disk..."
         sync
-        hdparm -y $(lvs -o seg_pe_ranges /dev/mapper/$disk | grep -oE '\/dev/sd.?' | sort -u)
+        hdparm -y $(lsblk -nlpso NAME /dev/mapper/$disk | grep -oE '^.+?sd.?[^0-9]$')
         echo "...done"
     fi
 done
+
