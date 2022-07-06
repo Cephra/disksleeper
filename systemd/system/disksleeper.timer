@@ -4,6 +4,7 @@ Requires=disksleeper.service
 
 [Timer]
 Unit=disksleeper.service
+OnBootSec=1m
 OnUnitActiveSec=3m
 
 [Install]
