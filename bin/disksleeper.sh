@@ -16,7 +16,6 @@ for lvol in ${LVS_TO_SLEEP[@]}; do
                 sync
                 hdparm -y $pdisk
             else
-                echo $DISK_IO
                 echo 'no disks spinning'
             fi
         done
