@@ -19,6 +19,8 @@ for lvol in ${LVS_TO_SLEEP[@]}; do
                 echo 'no disks spinning'
             fi
         done
+    else
+        echo 'no disks idling'
     fi
 done
 
